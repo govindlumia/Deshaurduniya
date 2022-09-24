@@ -1,0 +1,9 @@
+﻿@model IEnumerable<News.Model.AdvertisementModel>
+
+@foreach (var item in Model)
+{
+    <h2 class="sw-title"></h2>
+    <div class="tn-news">
+        <img src="@item.AdvertisementImage" style="width:100%" title="@item.AdvCategory" />
+    </div>
+}

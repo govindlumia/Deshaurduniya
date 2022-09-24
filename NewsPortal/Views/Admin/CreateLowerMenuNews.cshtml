@@ -1,0 +1,69 @@
+﻿@model News.Model.LowerMenuNewsModel
+@{
+
+    ViewBag.Title = "UserLogin";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+        Upper Menu Data
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/Admin/LowerMenuNews")" class="btn btn-default btn-success pull-right" style="color:white">Back To List</a></li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box box-success">
+        <div class="box-header with-border">
+            <h3 class="box-title">Add Upper Menu Data</h3>
+        </div>
+        @using (Html.BeginForm("CreateLowerMenuNews", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="box-body">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <input type="text" name="MenuId" class="form-control" style="display:none" value="@Model.Id" />
+                        <div class="form-group ">
+                            <label>Name</label>
+
+                            @Html.Action("_LowerMenuList", "Dropdown", new { selected = @Model.MenuId })
+
+                        </div>
+                        <div class="form-group">
+                            <label>Headline</label>
+                            <input type="text" name="Headline" class="form-control" value="@Model.Headline" placeholder="Enter Headline" autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <label>Image with size of H-117px and W-191px</label>
+                            <input type="file" name="file" id="file" class="form-control" value="@Model.NewsImage" autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <label>News</label>
+                            <textarea id="editor1" name="NewsContent" rows="10" cols="80">@Model.NewsContent</textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Image with size of H-117px and W-191px</label>
+                            <input type="file" name="file2" id="file2" class="form-control" value="@Model.image2" autocomplete="off" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Video Link</label>
+                            <input type="text" name="VideoLink" class="form-control" value="@Model.VideoLink" />
+                        </div>
+                        <div class="form-group">
+                            <label>News</label>
+                            <textarea id="editor2" name="NewsContent2" rows="10" cols="80">@Model.NewsContent2</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right" id="submit">Submit</button>
+            </div>
+            <!-- /.box-footer -->
+        }
+    </div>
+    <!-- /.box -->
+</section>

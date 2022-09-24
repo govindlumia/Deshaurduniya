@@ -1,0 +1,46 @@
+﻿@model News.Model.ArticleModel
+@{
+    <meta content=@Model.Headline name="viewport" />
+    ViewBag.Title = @Model.Headline;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Action("_header", "Home")
+<div class="breadcrumb-wrap">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Article</a></li>
+            <li class="breadcrumb-item active">Article details</li>
+        </ul>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Single News Start-->
+<div class="single-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="sn-container">
+                    <div class="sn-content">
+                        <h1 class="sn-title">@Model.Headline</h1>
+                    </div>
+                    <div class="sn-content">
+                        <img src="https://www.kindpng.com/picc/m/252-2524695_dummy-profile-image-jpg-hd-png-download.png" style="width: 10%;" />
+                        @Html.Raw(Model.NewsContent)
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <div class="news-list">
+                            @Html.Action("_advertisement", "Home")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Action("_footer", "Home")

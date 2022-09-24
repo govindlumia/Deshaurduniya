@@ -1,0 +1,28 @@
+﻿@model IEnumerable<News.Model.UpperMenuNewsModel>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4">
+        <div class="sn-img">
+            <img src="@item.NewsImage" />
+            <div class="sn-title">
+                @if (@item.Headline.Length > 40)
+                {<a href='~/Home/NewsDetail?Id=@item.Id'>@item.Headline.Substring(0, 40) ...</a> <a href='~/Home/NewsDetail?Id=@item.Id' class="readmorestyle"> और पढ़ें</a>}
+            else
+            { <a href='~/Home/NewsDetail?Id=@item.Id'>@item.Headline</a> <a href='~/Home/NewsDetail?Id=@item.Id' class="readmorestyle"> और पढ़ें</a>}
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="sn-img">
+            <img src="~/Content/img/news-350x223-2.jpg" />
+            <div class="sn-title">
+                <a href="">Interdum et fames ac ante</a>
+            </div>
+        </div>
+    </div>
+
+}
+

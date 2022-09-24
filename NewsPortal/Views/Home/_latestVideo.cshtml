@@ -1,0 +1,30 @@
+﻿@model IEnumerable<News.Model.LatestVideo>
+@foreach (var item in Model)
+{
+    <div class="tn-news">
+        <div class="tn-img">
+            <iframe width="80" height="63" src="@item.youtube_link" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="tn-title">
+            @if (@item.Heading.Length > 50)
+            {<a class=" VideoDetail" data-id="@item.Id">@item.Heading.Substring(0, 50) ...</a>}
+        else
+        { <a class=" VideoDetail" data-id="@item.Id">@item.Heading</a>}
+
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $("body").on("click", ".VideoDetail", function () {
+            //var BaseUrl = $("#BaseUrl").val();
+            var Id = $(this).attr("data-id");
+            var url = '@Url.Action("_latestVideoDetail", "Home")';
+            url += '?Id=' + Id;
+            $("#videoContainer").load(url);
+        });
+
+    });
+
+</script>

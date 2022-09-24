@@ -1,0 +1,147 @@
+﻿@Html.Action("_header", "Home")
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <!-- Top News Start-->
+            <div class="top-news">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 tn-left">
+                            <h2 class="sw-title">Latest News</h2>
+                            <div class="row tn-slider">
+                                @Html.Action("_homeNewsSlider", "Home")
+                            </div>
+                        </div>
+                        <div class="col-md-6 tn-right">
+                            <h2 class="sw-title">Top News</h2>
+                            <div class="row">
+                                @Html.Action("_homeTopNewsList", "Home")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Top News End-->
+            <!-- Category News Start-->
+            <div class="tab-news">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="sw-title">Faridabad</h2>
+                            <div class="tab-content">
+                                <div class="container tab-pane active">
+                                    @Html.Action("_homeMenuNewsList", "Home", new { Id = 5 })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="sw-title">Haryana</h2>
+                            <div class="tab-content">
+                                <div class="container tab-pane active">
+                                    @Html.Action("_homeMenuNewsList", "Home", new { Id = 6 })
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category News End-->
+            <!-- Category News Start-->
+            <div class="tab-news">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="sw-title">Videos</h2>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="tab-content">
+                                <div class="container tab-pane active">
+                                    <div id="videoContainer">
+                                        @Html.Action("_latestVideoDetail", "Home", new { Id = 1 })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tab-content">
+                                <div class="container tab-pane active">
+                                    @Html.Action("_latestVideo", "Home")
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category News End-->
+            <!-- Category News Start-->
+            <div class="tab-news">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="sw-title">Health</h2>
+                            <div class="tab-content">
+                                <div class="container tab-pane active">
+                                    @Html.Action("_homeMenuNewsList", "Home", new { Id = 7 })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="sw-title">Sports</h2>
+                            <div class="tab-content">
+                                <div class="container tab-pane active">
+                                    @Html.Action("_homeMenuNewsList", "Home", new { Id = 11 })
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category News End-->
+            <!-- Category News Start-->
+            <div class="tab-news">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="sw-title">Business</h2>
+                            <div class="tab-content">
+                                <div class="container tab-pane active">
+                                    @Html.Action("_homeMenuNewsList", "Home", new { Id = 2 })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="sw-title">Entertainment</h2>
+                            <div class="tab-content">
+                                <div class="container tab-pane active">
+                                    @Html.Action("_homeMenuNewsList", "Home", new { Id = 4 })
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category News End-->
+
+        </div>
+        <div class="col-md-3">
+            <div class="sidebar">
+                <div class="sidebar-widget">
+                    <div class="news-list">
+                        @Html.Action("_advertisement", "Home")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Action("_footer", "Home")

@@ -1,0 +1,7 @@
+﻿@model IEnumerable<News.Model.MenuModel>
+@foreach (var item in Model)
+{
+    <li><a href='~/Home/NewsList?Id=@item.MenuId'>@item.MenuName</a></li>
+}
+
+

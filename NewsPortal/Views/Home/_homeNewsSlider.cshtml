@@ -1,0 +1,16 @@
+﻿@model IEnumerable<News.Model.UpperMenuNewsModel>
+@foreach (var item in Model)
+{
+    <div class="col-md-6">
+        <div class="tn-img">
+            <img src="@item.NewsImage" />
+            <div class="tn-title">
+                @if (@item.Headline.Length > 60)
+                {<a href='~/Home/NewsDetail?Id=@item.Id'>@item.Headline.Substring(0, 60) ...</a> }
+            else
+            { <a href='~/Home/NewsDetail?Id=@item.Id'>@item.Headline</a>}
+               
+            </div>
+        </div>
+    </div>
+}

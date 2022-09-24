@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    @*<title>Bootstrap News Template - Free HTML Templates</title>*@
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Bootstrap News Template - Free HTML Templates" name="keywords" />
+    <meta content="Bootstrap News Template - Free HTML Templates" name="description" />
+    <!-- Favicon -->
+    @*<link href="~/Content/img/favicon.ico" rel="icon" />*@
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet" />
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="~/Content/lib/slick/slick.css" rel="stylesheet" />
+    <link href="~/Content/lib/slick/slick-theme.css" rel="stylesheet" />
+    <link href="~/Content/css/Custom.css" rel="stylesheet" />
+    <!-- Template Stylesheet -->
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <!-- JavaScript Libraries -->
+    <script src="~/Content/js/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript">
+        function date_time(id) {
+            date = new Date;
+            year = date.getFullYear();
+            month = date.getMonth();
+            months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+            d = date.getDate();
+            day = date.getDay();
+            days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+            h = date.getHours();
+            if (h < 10) {
+                h = "0" + h;
+            }
+            if (h >= 12) {
+                h = h - 12;
+                dd = "PM";
+            }
+            else if (h <= 12) {
+                h = h;
+                dd = "AM";
+            }
+            if (h == 0) {
+                h = 12;
+            }
+            m = date.getMinutes();
+            if (m < 10) {
+                m = "0" + m;
+            }
+            s = date.getSeconds();
+            if (s < 10) {
+                s = "0" + s;
+            }
+            result = '' + days[day] + ' ' + months[month] + ' ' + d + ' ' + year + ' ' + h + ':' + m + ':' + s + ' ' + dd;
+            document.getElementById(id).innerHTML = result;
+            setTimeout('date_time("' + id + '");', '1000');
+            return true;
+        }
+    </script>
+    <style class="text/css">
+        .logo .logo_icon {
+            float: left;
+        }
+
+            .logo .logo_icon img {
+                height: 100px;
+                margin-right: 0px;
+            }
+
+        .hindi,
+        .english {
+            float: left;
+            font-size: 24px;
+            width: 109px;
+            font-weight: bold;
+            margin-left: 15px;
+            color: #003366;
+            position: absolute;
+            transition-duration: 0.5s;
+        }
+
+        .english {
+            line-height: 34px;
+            margin-top: 5px;
+        }
+
+            .hindi span,
+            .english span {
+                font-size: 30px;
+                display: block;
+            }
+
+        .hidden {
+            opacity: 0
+        }
+    </style>
+</head>
+<body>
+   
+    @RenderBody()
+   
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+    <script src="~/Content/lib/easing/easing.min.js"></script>
+    <script src="~/Content/lib/slick/slick.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/Content/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<News.Model.MenuModel>
+
+<div class="navbar-nav mr-auto">
+   
+    @foreach (var item in Model)
+    {
+
+        <a href="~/Home/NewsList?Id=@item.MenuId" class="nav-item nav-link active">@item.MenuName</a>
+
+    }
+
+</div>

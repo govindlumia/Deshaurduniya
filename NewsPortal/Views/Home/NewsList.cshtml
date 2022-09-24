@@ -1,0 +1,52 @@
+﻿@model IEnumerable<News.Model.UpperMenuNewsModel>
+@{
+    ViewBag.Title = "NewsList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Action("_header", "Home")
+
+<!-- Top News Start-->
+<div class="top-news">
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
+</div>
+<!-- Top News End-->
+<div class="tab-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tab-content">
+                    <div id="featured" class="container tab-pane active">
+                        @foreach (var item in Model)
+                        {
+                            <div class="tn-news">
+                                <div class="tn-img">
+                                    <img src="@item.NewsImage" />
+                                </div>
+                                <div class="tn-title">
+                                    <a href='~/Home/NewsDetail?Id=@item.Id'>@item.Headline</a>
+                                    <a href='~/Home/NewsDetail?Id=@item.Id' class="readmorestyle"> और पढ़ें</a>
+                                </div>
+                            </div>
+                        }
+                       
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="tab-content">
+                    <div class="container tab-pane active">
+                        @Html.Action("_advertisement", "Home")
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Action("_footer", "Home")

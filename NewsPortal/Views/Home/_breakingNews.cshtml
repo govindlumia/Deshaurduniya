@@ -1,0 +1,14 @@
+﻿@model IEnumerable<News.Model.BreakingNews>
+<div class="HeadNewsStrip">
+    <div class="HeadTazaStyle">Breaking News : </div>
+    <div class="HeadNewsStripStyle">
+        <marquee scrolldelay="1" scrollamount="4" onmouseover="this.stop();" onmouseout="this.start();">
+            
+                @foreach (var item in Model)
+                {
+                    <a href='main_details.aspx?sno=@item.sno'>•  @item.BreakingNew
+                    </a>                   
+                }
+        </marquee>
+    </div>
+</div>

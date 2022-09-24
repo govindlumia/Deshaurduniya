@@ -1,0 +1,42 @@
+﻿@model News.Model.MenuModel
+@{
+     Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+<section class="content-header">
+    <h1>
+        User
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Content("~/Admin/UpperMenu")" class="btn btn-default btn-success pull-right" style="color:white">Upper menu list</a></li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box box-success">
+        <div class="box-header with-border">
+            <h3 class="box-title">Upper Menu Details</h3>
+        </div>
+        @using (Html.BeginForm("CreateUpperMenu", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="form-group col-md-4">
+                            <label>Name</label>
+                            <input type="text" name="MenuId" class="form-control" style="display:none" value="@Model.MenuId" />
+                            <input type="text" name="MenuName" class="form-control" value="@Model.MenuName" placeholder="Enter UserName" autocomplete="off" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right" id="submit">Submit</button>
+            </div>
+            <!-- /.box-footer -->
+        }
+    </div>
+    <!-- /.box -->
+</section>
